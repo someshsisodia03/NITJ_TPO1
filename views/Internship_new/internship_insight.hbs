@@ -227,6 +227,242 @@
 .prgram-btn{
 width: 200px;
 }
+  .branches-list, .years-list {
+            display: none;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .branches-list ul, .years-list ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .branches-list li, .years-list li {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .branches-list li:hover, .years-list li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-open {
+            display: block;
+        }
+        .heading{
+          text-align: center;
+          padding: 1rem;
+        }
+        .arrow {
+    display: none; /* Hide arrows by default */
+    margin-left: 5px; /* Space between text and arrow */
+    font-size: 16px; /* Adjust size as needed */
+    transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+.branch-active .arrow {
+    display: inline-block; /* Show arrow for active branch */
+    transform: rotate(90deg); /* Rotate arrow to point right when active */
+}
+
+.years-list {
+    display: none; /* Hide years list by default */
+}
+
+.years-list.active {
+    display: block; /* Show years list when active */
+}
+/* Styling for red background when BTech branches are displayed */
+.branches-list {
+    border: 3px solid #1E3A8A; /* Same color as the heading (you can adjust the color code) */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.branches-list .heading {
+    background-color: #1E3A8A; /* Keep the same color for the heading */
+    padding: 10px;
+    color: white;
+}
+/* Limit the height of the branches list and add a scrollbar */
+.branches-list ul {
+    max-height: 300px; /* Adjust this value based on how much space you want */
+    overflow-y: auto;  /* Allow vertical scrolling */
+}
+
+/* Optional: Customize the scrollbar (for WebKit-based browsers) */
+.branches-list ul::-webkit-scrollbar {
+    display: none;
+}
+
+.branches-list ul::-webkit-scrollbar-thumb {
+    background-color: #1E3A8A; /* Customize scrollbar thumb color */
+    border-radius: 10px;
+}
+.branch-arrow {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        .branch-item.active .branch-arrow {
+            transform: rotate(-135deg); /* Rotate to point down */
+        }
+        .years-list {
+            display: none;
+            margin-top: 10px;
+        }
+        .years-list.active {
+            display: block;
+        }
+        {{!-- ---------------------------- --}}
+.program-item {
+    position: relative; /* Positioning for proper alignment of children */
+    margin-bottom: 1rem;
+}
+
+.program-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.branch-item {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd; /* Separator between items */
+}
+
+.branch-item:last-child {
+    border-bottom: none; /* Remove the separator for the last item */
+}
+
+.branch-item.active {
+    background-color: #e0f7fa; /* Highlight selected branch */
+}
+
+
+.years-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.years-list li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd; /* Separator between items */
+}
+
+.years-list li:last-child {
+    border-bottom: none; /* Remove the separator for the last item */
+}
+.program-btn {
+    border-radius: 12px; /* Full border-radius */
+    border-bottom-left-radius: 0 !important; /* Remove bottom-left border-radius */
+    border-bottom-right-radius: 0 !important; /* Remove bottom-right border-radius */
+}
+
+
+/* Styling for the branches list */
+.branches-list {
+    display: none; /* Initially hidden */
+    position: relative; /* Relative positioning to keep it within the bounds of the program-item */
+    width: 100%;
+    background: #fff; /* Background color for the dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1rem;
+    border: 1px solid #ddd; /* Border for the dropdown */
+    border-top-left-radius: 0; /* Remove top-left border-radius */
+    border-top-right-radius: 0; /* Remove top-right border-radius */
+    border-bottom-left-radius: 12px; /* Round bottom-left corner */
+    border-bottom-right-radius: 12px; /* Round bottom-right corner */
+    border-right: 1px solid #ddd; /* Optional: Add right border to separate from years section */
+    padding: 15px; /* Add padding if needed */
+    flex: 1; /* Flex to occupy remaining space */
+}
+
+/* Styling for the years list */
+.years-list {
+    border-top-left-radius: 0; /* Remove top-left border-radius */
+    border-top-right-radius: 0; /* Remove top-right border-radius */
+    border-bottom-left-radius: 12px; /* Round bottom-left corner */
+    border-bottom-right-radius: 12px; /* Round bottom-right corner */
+    padding: 15px; /* Add padding if needed */
+    flex: 1; /* Flex to occupy remaining space */
+    background-color: white; /* Optional: Set background color */
+    margin-top: 0rem;
+}
+
+/* Styling for the branches list */
+.branches-list {
+    flex: 1; /* Flex to occupy remaining space */
+    border: 1px solid #ddd; /* Border to separate from years section */
+    padding: 15px; /* Add padding if needed */
+    background-color: #fff; /* Set background color */
+    position: relative; /* Ensure this is above the footer */
+    z-index: 1; /* Lower z-index to ensure it appears below the header */
+}
+
+/* Styling for the years list */
+.years-list {
+    position: absolute; /* Position absolutely relative to parent */
+    left: 100%; /* Place it to the right of the branches list */
+    top: 0; /* Align to the top of the branches list */
+    z-index: 10; /* Ensure it's above other content */
+    display: none; /* Hide by default, show with JavaScript */
+    background-color: #fff; /* Set background color to match */
+    border: 1px solid #ddd; /* Add border for visibility */
+    padding: 15px; /* Add padding if needed */
+}
+
+/* Footer styling */
+footer {
+    position: fixed; /* Fix the footer at the bottom of the page */
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1; /* Example background color */
+    text-align: center;
+    padding: 10px;
+    z-index: 1; /* Ensure it's below the header and dropdown */
+}
+@media (max-width:823px) {
+  .programs{
+        width:90vw;
+  }
+}
+@media (max-width:614px) {
+  .programs{
+        width:75vw;
+  }
+ 
+      .branches-list li, .years-list li {
+        font-size: 1rem;
+    }
+}
+.branch-arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: rotate(45deg); /* Arrow pointing down by default */
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+}
+
+.branch-arrow.up {
+    transform: rotate(-135deg); /* Arrow pointing up */
+}
+
   </style>
 </head>
 
@@ -276,22 +512,23 @@ width: 200px;
             <div class="program-item">
                 <button class="prgram-btn transition delay-100 duration-300 hover:cursor-pointer hover:shadow-xl hover:bg-sky-400 hover:shadow-sky-500 hover:scale-110 w-full px-3 py-5 bg-white shadow shadow-gray-400 rounded-xl" onclick="toggleBranches('btech')">BTech</button>
                  <div id="btech-branches" class="branches-list">
+                  <h2 class="heading">BTech Branches</h2>
                    <ul>
                      <ul>
-    <li onclick="toggleYears('btech','Bio Technology')">Bio Technology</li>
-    <li onclick="toggleYears('btech','Chemical Engineering')">Chemical Engineering</li>
-    <li onclick="toggleYears('btech','Civil Engineering')">Civil Engineering</li>
-    <li onclick="toggleYears('btech','Computer Science and Engineering')">Computer Science and Engineering</li>
-    <li onclick="toggleYears('btech','Data Science and Engineering')">Data Science and Engineering</li>
-    <li onclick="toggleYears('btech','Electrical Engineering')">Electrical Engineering</li>
-    <li onclick="toggleYears('btech','Electronics and Communication Engineering')">Electronics and Communication Engineering</li>
-    <li onclick="toggleYears('btech','Electronics and VLSI Engineering')">Electronics and VLSI Engineering</li>
-    <li onclick="toggleYears('btech','Industrial and Production Engineering')">Industrial and Production Engineering</li>
-    <li onclick="toggleYears('btech','Information Technology')">Information Technology</li>
-    <li onclick="toggleYears('btech','Instrumental and Control Engineering')">Instrumental and Control Engineering</li>
-    <li onclick="toggleYears('btech','Mathematics and Computing')">Mathematics and Computing</li>
-    <li onclick="toggleYears('btech','Mechanical Engineering')">Mechanical Engineering</li>
-    <li onclick="toggleYears('btech','Textile Technology')">Textile Technology</li>
+    <li onclick="toggleYears('btech','Bio Technology')"><span class="branch-arrow"></span>Bio Technology</li>
+    <li onclick="toggleYears('btech','Chemical Engineering')"><span class="branch-arrow"></span>Chemical Engineering</li>
+    <li onclick="toggleYears('btech','Civil Engineering')"><span class="branch-arrow"></span>Civil Engineering</li>
+    <li onclick="toggleYears('btech','Computer Science and Engineering')"><span class="branch-arrow"></span>Computer Science and Engineering</li>
+    <li onclick="toggleYears('btech','Data Science and Engineering')"><span class="branch-arrow"></span>Data Science and Engineering</li>
+    <li onclick="toggleYears('btech','Electrical Engineering')"><span class="branch-arrow"></span>Electrical Engineering</li>
+    <li onclick="toggleYears('btech','Electronics and Communication Engineering')"><span class="branch-arrow"></span>Electronics and Communication Engineering</li>
+    <li onclick="toggleYears('btech','Electronics and VLSI Engineering')"><span class="branch-arrow"></span>Electronics and VLSI Engineering</li>
+    <li onclick="toggleYears('btech','Industrial and Production Engineering')"><span class="branch-arrow"></span>Industrial and Production Engineering</li>
+    <li onclick="toggleYears('btech','Information Technology')"><span class="branch-arrow"></span>Information Technology</li>
+    <li onclick="toggleYears('btech','Instrumental and Control Engineering')"><span class="branch-arrow"></span>Instrumental and Control Engineering</li>
+    <li onclick="toggleYears('btech','Mathematics and Computing')"><span class="branch-arrow"></span>Mathematics and Computing</li>
+    <li onclick="toggleYears('btech','Mechanical Engineering')"><span class="branch-arrow"></span>Mechanical Engineering</li>
+    <li onclick="toggleYears('btech','Textile Technology')"><span class="branch-arrow"></span>Textile Technology</li>
 </ul>
 
 
@@ -310,17 +547,17 @@ width: 200px;
             <div class="program-item">
                 <button class="transition delay-100 duration-300 hover:cursor-pointer hover:shadow-xl hover:bg-sky-400 hover:shadow-sky-500 hover:scale-110 w-full px-3 py-5 bg-white shadow shadow-gray-400 rounded-xl" onclick="toggleBranches('mtech')">MTech</button>
                 <div id="mtech-branches" class="branches-list">
+                  <h2 class="heading">MTech Branches</h2>
                     <ul class="list-none p-2">
-                        <li onclick="toggleYears('mtech','Artificial Intelligence')">Artificial Intelligence</li>
-                        <li onclick="toggleYears('mtech','Bio Technology')">Bio Technology</li>
-                        <li onclick="toggleYears('mtech','Chemical Engineering')">Chemical Engineering</li>
-                        <li onclick="toggleYears('mtech','Civil Engineering')">Civil Engineering</li>
-                        <li onclick="toggleYears('mtech','Computer Science and Engineering')">Computer Science and Engineering</li>
-                        <li onclick="toggleYears('mtech','Data Science and Engineering')">Data Science and Engineering</li>
-                        <li onclick="toggleYears('mtech','Electrical Engineering')">Electrical Engineering</li>
-                        <li onclick="toggleYears('mtech','Electronics and Communication Engineering')">Electronics and Communication Engineering</li>
-                        <li onclick="toggleYears('mtech','Information Technology')">Information Technology</li>
-                        <li onclick="toggleYears('mtech','Mechanical Engineering')">Mechanical Engineering</li>
+                        <li onclick="toggleYears('mtech','Artificial Intelligence')"><span class="branch-arrow"></span>Artificial Intelligence</li>
+                        <li onclick="toggleYears('mtech','Computer Science and Engineering')"><span class="branch-arrow"></span>Computer Science and Engineering</li>
+                        <li onclick="toggleYears('mtech','Bio Technology')"><span class="branch-arrow"></span>Computer Science & Engineering (Information Security)</li>
+                        <li onclick="toggleYears('mtech','Chemical Engineering')"><span class="branch-arrow"></span>Control and Instrumentation Engineering</li>
+                        <li onclick="toggleYears('mtech','Civil Engineering')"><span class="branch-arrow"></span>Data Analytics</li>
+                        <li onclick="toggleYears('mtech','Data Science and Engineering')"><span class="branch-arrow"></span>Data Science and Engineering</li>
+                        <li onclick="toggleYears('mtech','Electrical Engineering')"><span class="branch-arrow"></span>Design Engineering</li>
+                        <li onclick="toggleYears('mtech','Electronics and Communication Engineering')"><span class="branch-arrow"></span>Signal Processing and Machine Learning</li>
+                        <li onclick="toggleYears('mtech','Information Technology')"><span class="branch-arrow"></span>VLSI DESIGN</li>
                     </ul>
 
                     <div id="mtech-years" class="years-list">
@@ -338,12 +575,13 @@ width: 200px;
             <div class="program-item">
                 <button class="transition delay-100 duration-300 hover:cursor-pointer hover:shadow-xl hover:bg-sky-400 hover:shadow-sky-500 hover:scale-110 w-full px-3 py-5 bg-white shadow shadow-gray-400 rounded-xl" onclick="toggleBranches('mba')">MBA</button>
                 <div id="mba-branches" class="branches-list">
+                  <h2 class="heading">MBA Branches</h2>
                    <ul>
-                      <li onclick="toggleYears('mba','Marketing')">Marketing</li>
-                      <li onclick="toggleYears('mba','Finance')">Finance</li>
-                      <li onclick="toggleYears('mba','Human Resources')">Human Resources</li>
-                      <li onclick="toggleYears('mba','Operations')">Operations</li>
-                      <li onclick="toggleYears('mba','IT Management')">IT Management</li>
+                      <li onclick="toggleYears('mba','Marketing')"><span class="branch-arrow"></span>Marketing</li>
+                      <li onclick="toggleYears('mba','Finance')"><span class="branch-arrow"></span>Finance</li>
+                      <li onclick="toggleYears('mba','Human Resources')"><span class="branch-arrow"></span>Human Resources</li>
+                      <li onclick="toggleYears('mba','Operations')"><span class="branch-arrow"></span>Operations</li>
+                      <li onclick="toggleYears('mba','IT Management')"><span class="branch-arrow"></span>IT Management</li>
                   </ul>
 
                     <div id="mba-years" class="years-list">
@@ -361,10 +599,6 @@ width: 200px;
     </div>
 
   <div id="course-table" class="table-container"></div>
-
-  
-
- 
 
 <script>
     async function fetchCourseData(degree, branch,year) {
@@ -606,19 +840,30 @@ function toggleBranches(program) {
         yearContainer.style.display = 'none';
     }
 }
-let branch="";
-function toggleYears(program,brch) {
-    branch=brch;
+let branch = "";
+
+function toggleYears(program, brch) {
+    branch = brch;
     const yearContainer = document.getElementById(`${program}-years`);
+
+    // Select the corresponding list item (branch) to toggle the arrow
+    const branchElement = document.querySelector(`li[onclick="toggleYears('${program}','${brch}')"]`);
+    const arrow = branchElement.querySelector('.branch-arrow');
+
+    // Toggle year container visibility
     if (yearContainer.style.display === 'block') {
         yearContainer.style.display = 'none';
+        arrow.classList.remove('up');  // Remove the "up" class to point arrow downwards
     } else {
         yearContainer.style.display = 'block';
+        arrow.classList.add('up');  // Add the "up" class to point arrow upwards
     }
 }
+
 function handleYears(degree,year){
    fetchCourseData(degree, branch,year);
 }
+
 </script>
 
 <div id="course-table"></div>
